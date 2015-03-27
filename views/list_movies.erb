@@ -1,14 +1,15 @@
 <html>
 <header>
-	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
 </header>
-<h1> Let's Play Movie Trivia!</h1>
+<h1> List of Movies! </h1>
 <body>
-	<% counter = 0 %>
-  <% while counter < 20 %>
-	<% @i[counter].title %>
-	<% counter += 1 %>
+  <% @movies.each do |movie| %>
+  <% if movie[:poster] != nil %>
+	<div><%= movie[:title] %><div>
+	<div><img onclick="alert('osihdjod')" src="<%= movie[:poster]%>"></div>
 	<% end %>
+  <% end %>
 </body>
 
 </html>
